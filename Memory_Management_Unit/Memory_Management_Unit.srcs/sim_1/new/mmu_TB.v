@@ -70,7 +70,7 @@ module mmu_TB(
         end
         initial
         begin
-            #1200 $finish;
+            #4000 $finish;
         end
         
         always
@@ -88,6 +88,33 @@ module mmu_TB(
             
             #40 enable_RW=0;
             
+            #240
+            
+            #40 enable_RW=1;
+                read=0;
+                virtual_address=28'h0000ffc;
+                data_in=32'h00bf001;// page descriptor
+            
+            #40 enable_RW=0;
+            
+            #240
+            
+            #40 enable_RW=1;
+                read=0;
+                virtual_address=28'h0000ffc;
+                data_in=32'h00bf001;// data at first page descriptor
+            
+            #40 enable_RW=0;
+            
+            #240
+                        
+            #40 enable_RW=1;
+                read=0;
+                virtual_address=28'h0000bf3c;
+                data_in=32'h0007f002;//  second page descriptor
+            
+            #40 enable_RW=0;
+            
             
             #240 mmu_enable=1;
        
@@ -97,5 +124,26 @@ module mmu_TB(
                 
             #40 enable_RW=0;
                 read=0;
+                
+                
+           //test for a condition where the data exists in tlb
+           #240
+           #40 virtual_address=28'hFFFFAAA;
+               read=1;
+               enable_RW=1;
+               
+           #40 enable_RW=0;
+               read=0;
+               
+           #320
+           //for a small page
+           #40 virtual_address=28'h0FFFFA8;
+               read=1;
+               enable_RW=1;
+               
+           #40 enable_RW=0;
+               read=0;     
+                               
+                
         end    
 endmodule

@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="24" />
    <wvobject db_ref_id="1" fp_name="/mmu_TB/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -22,7 +22,7 @@
    <wvobject db_ref_id="1" fp_name="/mmu_TB/virtual_address" type="array">
       <obj_property name="ElementShortName">virtual_address[27:0]</obj_property>
       <obj_property name="ObjectShortName">virtual_address[27:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/mmu_TB/read" type="logic">
       <obj_property name="ElementShortName">read</obj_property>
@@ -72,6 +72,7 @@
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/awaddr" type="array">
          <obj_property name="ElementShortName">awaddr[31:0]</obj_property>
          <obj_property name="ObjectShortName">awaddr[31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/awlen" type="array">
          <obj_property name="ElementShortName">awlen[3:0]</obj_property>
@@ -141,7 +142,7 @@
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/araddr" type="array">
          <obj_property name="ElementShortName">araddr[31:0]</obj_property>
          <obj_property name="ObjectShortName">araddr[31:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/arlen" type="array">
          <obj_property name="ElementShortName">arlen[3:0]</obj_property>
@@ -256,5 +257,33 @@
    <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/enable_RW" type="array">
       <obj_property name="ElementShortName">enable_RW[3:0]</obj_property>
       <obj_property name="ObjectShortName">enable_RW[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/read_address_read_pointer" type="logic">
+      <obj_property name="ElementShortName">read_address_read_pointer</obj_property>
+      <obj_property name="ObjectShortName">read_address_read_pointer</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/read_address_write_pointer" type="logic">
+      <obj_property name="ElementShortName">read_address_write_pointer</obj_property>
+      <obj_property name="ObjectShortName">read_address_write_pointer</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/read_address_queue_full" type="logic">
+      <obj_property name="ElementShortName">read_address_queue_full</obj_property>
+      <obj_property name="ObjectShortName">read_address_queue_full</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/read_address_queue_empty" type="logic">
+      <obj_property name="ElementShortName">read_address_queue_empty</obj_property>
+      <obj_property name="ObjectShortName">read_address_queue_empty</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/flip" type="logic">
+      <obj_property name="ElementShortName">flip</obj_property>
+      <obj_property name="ObjectShortName">flip</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/ram_controller_state" type="array">
+      <obj_property name="ElementShortName">ram_controller_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_controller_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/no_of_transfers" type="array">
+      <obj_property name="ElementShortName">no_of_transfers[2:0]</obj_property>
+      <obj_property name="ObjectShortName">no_of_transfers[2:0]</obj_property>
    </wvobject>
 </wave_config>

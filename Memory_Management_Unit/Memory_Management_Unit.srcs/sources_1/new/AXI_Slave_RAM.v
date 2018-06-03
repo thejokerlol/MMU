@@ -573,6 +573,7 @@ module AXI_Slave_RAM(
                                 read_address_read_pointer<=read_address_read_pointer+1;
                             end
                             ram_controller_state<=RAM_CONTROLLER_IDLE;
+                            no_of_transfers<=0;
                         end
                         
                     end

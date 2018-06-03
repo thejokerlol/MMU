@@ -321,12 +321,17 @@ module mmu(
                         if(rdata[1:0]==2'b10)//a section
                         begin
                             physical_address<={rdata[30:27],rdata[26:23],rdata[22:21],virtual_address[13:0]};
-                            mmu_state<=MMU_IDLE_STATE;
+                            TLB_virtual_address=virtual_address;
+                            TLB_physical_address_input={rdata[30:27],rdata[26:23],rdata[22:21],virtual_address[13:0]};
+                            TLB_properties_input={2'b00,rdata[11:10],4'b0000};//rdata[11:10] are access permissions
+                            TLB_enable_RW=1;
+                            TLB_read=0;
+                            mmu_state<=WRITE_BACK_IN_TLB;
                             rready=0;
                         end
                         else if(rdata[1:0]==2'b01)//a page
                         begin
-                            araddr={rdata[30:20],virtual_address[13:10],2'b00};
+                            araddr={rdata[27:10],virtual_address[13:10],2'b00};//address of a second level descriptor
                             arsize=2'b10;
                             arlen=1;
                             arburst=2'b10;
@@ -364,7 +369,12 @@ module mmu(
                         if(rdata[1:0]==2'b10)//a small page
                         begin
                             physical_address<={rdata[25:12],virtual_address[9:0]};
-                            mmu_state<=MMU_IDLE_STATE;
+                            TLB_virtual_address=virtual_address;
+                            TLB_physical_address_input={rdata[25:12],virtual_address[9:0]};
+                            TLB_properties_input={2'b01,rdata[11:10],4'b0000};//rdata[11:10] are access permissions
+                            TLB_enable_RW=1;
+                            TLB_read=0;
+                            mmu_state<=WRITE_BACK_IN_TLB;
                             
                         end
                         else if(rdata[1:0]==2'b01)//a large  page
@@ -384,7 +394,9 @@ module mmu(
                 end
                 WRITE_BACK_IN_TLB:
                 begin
-                    
+                    TLB_enable_RW<=0;
+                    TLB_read<=0;
+                    mmu_state<=MMU_IDLE_STATE;
                 end
                 MMU_DISABLED_WAIT_FOR_ARREADY:
                 begin

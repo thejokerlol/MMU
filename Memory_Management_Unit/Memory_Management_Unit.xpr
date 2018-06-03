@@ -114,6 +114,7 @@
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/Translation_Buffer_tb_behav.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/mmu_TB_behav.wcfg"/>
+        <Option Name="xsim.simulate.runtime" Val="4000ns"/>
       </Config>
     </FileSet>
   </FileSets>
