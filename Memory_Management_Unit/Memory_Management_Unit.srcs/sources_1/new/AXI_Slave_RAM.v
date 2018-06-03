@@ -155,7 +155,7 @@ module AXI_Slave_RAM(
     //RAM Control signals
     reg[3:0] read;
     reg[3:0] enable_RW;
-    reg[9:0] address[3:0];
+    reg[23:0] address[3:0];
     reg[7:0] data_in[3:0];
     wire[7:0] data_out[3:0];
     
@@ -584,6 +584,14 @@ module AXI_Slave_RAM(
                 end
                 WAIT_FOR_WVALID:
                 begin
+                    read[0]<=0;
+                    read[1]<=0;
+                    read[2]<=0;
+                    read[3]<=0;
+                    enable_RW[0]<=0;
+                    enable_RW[1]<=0;
+                    enable_RW[2]<=0;
+                    enable_RW[3]<=0;
                     if(no_of_transfers<=(write_len_queue[write_address_read_pointer]-1))
                     begin
                         if(wvalid==1)
@@ -661,6 +669,7 @@ module AXI_Slave_RAM(
                     end
                     else
                     begin
+                        
                         bid<=write_id_queue[write_address_read_pointer];
                         bvalid=1;
                         bresp=2'b11;

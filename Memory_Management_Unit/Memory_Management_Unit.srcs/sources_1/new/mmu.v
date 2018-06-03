@@ -24,6 +24,7 @@ module mmu(
 
         clk,
         reset,
+        mmu_enable,
         virtual_address,
         read,
         TTBR_read,
@@ -32,11 +33,14 @@ module mmu(
         supervisor,
         fault_address_register,
         fault_status_register,
-        physical_address
+        physical_address,
+        data_in,
+        data_out
     );
     
     input clk;
     input reset;
+    input mmu_enable;
     input[27:0] virtual_address;
     input read;
     input TTBR_read;
@@ -46,6 +50,8 @@ module mmu(
     output reg[31:0] fault_address_register;
     output reg[3:0] fault_status_register;
     output reg[23:0] physical_address;
+    input[31:0] data_in;
+    output reg[31:0] data_out;
     
     
     //mmu registers
@@ -110,16 +116,21 @@ module mmu(
     wire TLB_hit;
     
     //mmu signals
-    reg[2:0] mmu_state;
+    reg[3:0] mmu_state;
     reg[31:0] first_descriptor;
     reg[31:0] second_descriptor;
-    parameter MMU_IDLE_STATE=3'b000;
-    parameter MMU_CHECK_IN_TLB=3'b001;
-    parameter WAIT_FOR_ARREADY=3'b010;
-    parameter WAIT_FOR_FIRST_DESCRIPTOR=3'b011;
-    parameter WAIT_FOR_ARREADY2=3'b100;
-    parameter WAIT_FOR_SECOND_DESCRIPTOR=3'b101;
-    parameter WRITE_BACK_IN_TLB=3'b110;
+    parameter MMU_IDLE_STATE=4'b0000;
+    parameter MMU_CHECK_IN_TLB=4'b0001;
+    parameter WAIT_FOR_ARREADY=4'b0010;
+    parameter WAIT_FOR_FIRST_DESCRIPTOR=4'b0011;
+    parameter WAIT_FOR_ARREADY2=4'b0100;
+    parameter WAIT_FOR_SECOND_DESCRIPTOR=4'b0101;
+    parameter WRITE_BACK_IN_TLB=4'b0110;
+    parameter MMU_DISABLED_WAIT_FOR_ARREADY=4'b0111;
+    parameter MMU_DISABLED_WAIT_FOR_RVALID=4'b1000;
+    parameter MMU_DISABLED_WAIT_FOR_AWREADY=4'b1001;
+    parameter MMU_DISABLED_WAIT_FOR_WREADY=4'b1010;
+    parameter MMU_DISABLED_WAIT_FOR_BVALID=4'b1011;
     
     
     AXI_Slave_RAM DRAM_Slave(
@@ -150,7 +161,7 @@ module mmu(
             clk,
             reset,
             TLB_virtual_address,
-            ILB_physical_address_input,
+            TLB_physical_address_input,
             TLB_properties_input,
             TLB_read,
             TLB_enable_RW,
@@ -217,23 +228,58 @@ module mmu(
             wstrb=0;
             
             bready=0;
+            
+            
+            fault_address_register=0;
+            fault_status_register=0;
         end
         else
         begin
             case(mmu_state)
                 MMU_IDLE_STATE:
                 begin
-                    if(enable_RW)//either a read or a write operation
+                    if(mmu_enable)
                     begin
-                        TLB_virtual_address<=virtual_address;
-                        TLB_enable_RW<=1;
-                        TLB_read=1;
-                        mmu_state<=MMU_CHECK_IN_TLB;
+                        if(enable_RW)//either a read or a write operation
+                        begin
+                            TLB_virtual_address<=virtual_address;
+                            TLB_enable_RW<=1;
+                            TLB_read=1;
+                            mmu_state<=MMU_CHECK_IN_TLB;
+                        end
+                        else
+                        begin
+                            mmu_state<=MMU_IDLE_STATE;
+                              
+                        end
                     end
                     else
                     begin
-                        mmu_state<=MMU_IDLE_STATE;
-                          
+                        if(enable_RW)
+                        begin
+                            if(read)//read
+                            begin
+                                araddr={4'b0000,virtual_address};
+                                arsize=2'b10;
+                                arlen=1;
+                                arburst=2'b10;
+                                arvalid=1;
+                                mmu_state<=MMU_DISABLED_WAIT_FOR_ARREADY; 
+                            end
+                            else//write
+                            begin
+                                awaddr={4'b0000,virtual_address};
+                                awsize=2'b10;
+                                awlen=1;
+                                awburst=2'b10;
+                                awvalid=1;
+                                mmu_state<=MMU_DISABLED_WAIT_FOR_AWREADY;
+                            end
+                        end
+                        else
+                        begin
+                            mmu_state<=MMU_IDLE_STATE;
+                        end
                     end
                 end
                 MMU_CHECK_IN_TLB:
@@ -274,7 +320,7 @@ module mmu(
                         first_descriptor<=rdata;
                         if(rdata[1:0]==2'b10)//a section
                         begin
-                            physical_address<={rdata[30:20],virtual_address[13:0]};
+                            physical_address<={rdata[30:27],rdata[26:23],rdata[22:21],virtual_address[13:0]};
                             mmu_state<=MMU_IDLE_STATE;
                             rready=0;
                         end
@@ -338,6 +384,74 @@ module mmu(
                 end
                 WRITE_BACK_IN_TLB:
                 begin
+                    
+                end
+                MMU_DISABLED_WAIT_FOR_ARREADY:
+                begin
+                    if(arready==1)
+                    begin
+                        mmu_state<=MMU_DISABLED_WAIT_FOR_RVALID;
+                        arvalid=0;
+                    end
+                    else
+                    begin
+                        mmu_state<=MMU_DISABLED_WAIT_FOR_ARREADY;
+                    end
+                end
+                MMU_DISABLED_WAIT_FOR_RVALID:
+                begin
+                    if(rvalid)
+                    begin
+                        data_out<=rdata;
+                        mmu_state<=MMU_IDLE_STATE;
+                        rready=0;
+                    end
+                    else
+                    begin
+                        mmu_state<=MMU_DISABLED_WAIT_FOR_RVALID;
+                    end
+                end
+                MMU_DISABLED_WAIT_FOR_AWREADY:
+                begin
+                    if(awready)
+                    begin
+                        awvalid=0;
+                        wdata=data_in;
+                        wstrb=4'b1111;
+                        wvalid=1;
+                        mmu_state<=MMU_DISABLED_WAIT_FOR_WREADY;
+                    end
+                    else
+                    begin
+                        mmu_state<=MMU_DISABLED_WAIT_FOR_AWREADY;
+                    end
+                end
+                MMU_DISABLED_WAIT_FOR_WREADY:
+                begin
+                    if(wready)
+                    begin
+                        mmu_state<=MMU_DISABLED_WAIT_FOR_BVALID;
+                        wvalid<=0;
+                        wdata=0;
+                        wstrb=0;
+                        bready=1;
+                    end
+                    else
+                    begin
+                        mmu_state<=MMU_DISABLED_WAIT_FOR_WREADY;
+                    end
+                end
+                MMU_DISABLED_WAIT_FOR_BVALID:
+                begin
+                    if(bvalid)
+                    begin
+                        bready=0;
+                        mmu_state<=MMU_IDLE_STATE;
+                    end
+                    else
+                    begin
+                        mmu_state<=MMU_DISABLED_WAIT_FOR_BVALID;
+                    end
                     
                 end
             endcase
