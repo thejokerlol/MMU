@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Translation_Buffer_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Translation_Buffer_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="12" />
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/virtual_address" type="array">
+      <obj_property name="ElementShortName">virtual_address[27:0]</obj_property>
+      <obj_property name="ObjectShortName">virtual_address[27:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/physical_address_input" type="array">
+      <obj_property name="ElementShortName">physical_address_input[23:0]</obj_property>
+      <obj_property name="ObjectShortName">physical_address_input[23:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/properties_input" type="array">
+      <obj_property name="ElementShortName">properties_input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">properties_input[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/read" type="logic">
+      <obj_property name="ElementShortName">read</obj_property>
+      <obj_property name="ObjectShortName">read</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/enable_RW" type="logic">
+      <obj_property name="ElementShortName">enable_RW</obj_property>
+      <obj_property name="ObjectShortName">enable_RW</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/physical_address" type="array">
+      <obj_property name="ElementShortName">physical_address[23:0]</obj_property>
+      <obj_property name="ObjectShortName">physical_address[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/properties" type="array">
+      <obj_property name="ElementShortName">properties[7:0]</obj_property>
+      <obj_property name="ObjectShortName">properties[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/hit" type="logic">
+      <obj_property name="ElementShortName">hit</obj_property>
+      <obj_property name="ObjectShortName">hit</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/TB/comp_output" type="array">
+      <obj_property name="ElementShortName">comp_output[0:31]</obj_property>
+      <obj_property name="ObjectShortName">comp_output[0:31]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/Translation_Buffer_tb/TB/decoder_output" type="array">
+      <obj_property name="ElementShortName">decoder_output[4:0]</obj_property>
+      <obj_property name="ObjectShortName">decoder_output[4:0]</obj_property>
+   </wvobject>
+</wave_config>
