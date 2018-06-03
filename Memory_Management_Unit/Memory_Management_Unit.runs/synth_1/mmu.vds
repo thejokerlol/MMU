@@ -1,0 +1,611 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Jun 04 01:15:12 2018
+# Process ID: 7396
+# Log file: C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.runs/synth_1/mmu.vds
+# Journal file: C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source mmu.tcl -notrace
+Command: synth_design -top mmu -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-1223] The version limit for your license is '2017.08' and will expire in -277 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 244.918 ; gain = 68.902
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mmu' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v:23]
+	Parameter MMU_IDLE_STATE bound to: 4'b0000 
+	Parameter MMU_CHECK_IN_TLB bound to: 4'b0001 
+	Parameter WAIT_FOR_ARREADY bound to: 4'b0010 
+	Parameter WAIT_FOR_FIRST_DESCRIPTOR bound to: 4'b0011 
+	Parameter WAIT_FOR_ARREADY2 bound to: 4'b0100 
+	Parameter WAIT_FOR_SECOND_DESCRIPTOR bound to: 4'b0101 
+	Parameter WRITE_BACK_IN_TLB bound to: 4'b0110 
+	Parameter MMU_DISABLED_WAIT_FOR_ARREADY bound to: 4'b0111 
+	Parameter MMU_DISABLED_WAIT_FOR_RVALID bound to: 4'b1000 
+	Parameter MMU_DISABLED_WAIT_FOR_AWREADY bound to: 4'b1001 
+	Parameter MMU_DISABLED_WAIT_FOR_WREADY bound to: 4'b1010 
+	Parameter MMU_DISABLED_WAIT_FOR_BVALID bound to: 4'b1011 
+INFO: [Synth 8-638] synthesizing module 'AXI_Slave_RAM' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/AXI_Slave_RAM.v:23]
+	Parameter HIGH bound to: 1'b1 
+	Parameter LOW bound to: 1'b0 
+	Parameter RAM_CONTROLLER_IDLE bound to: 4'b0000 
+	Parameter WAIT_FOR_CLK_CYCLE bound to: 4'b0001 
+	Parameter PUT_DATA_ON_BUS bound to: 4'b0010 
+	Parameter WAIT_FOR_RREADY bound to: 4'b0011 
+	Parameter WAIT_FOR_WVALID bound to: 4'b0100 
+	Parameter WAIT_FOR_BREADY bound to: 4'b0101 
+	Parameter READ_ADDRESS_IDLE_STATE bound to: 1'b0 
+	Parameter READ_ADDRESS_BUSY_STATE bound to: 1'b1 
+INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/RAM.v:23]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 24 - type: integer 
+	Parameter RAM_DEPTH bound to: 4194304 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RAM' (1#1) [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/RAM.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/AXI_Slave_RAM.v:381]
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_size_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_size_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_address_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_address_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_size_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_size_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_len_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_len_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_len_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_len_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_id_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_id_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_id_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_id_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_address_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_address_queue_reg" dissolved into registers
+INFO: [Synth 8-256] done synthesizing module 'AXI_Slave_RAM' (2#1) [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/AXI_Slave_RAM.v:23]
+INFO: [Synth 8-638] synthesizing module 'Translation_Buffer' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/Translation_Buffer.v:24]
+INFO: [Synth 8-256] done synthesizing module 'Translation_Buffer' (3#1) [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/Translation_Buffer.v:24]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v:238]
+INFO: [Synth 8-256] done synthesizing module 'mmu' (4#1) [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v:23]
+WARNING: [Synth 8-3331] design mmu has unconnected port instruction
+WARNING: [Synth 8-3331] design mmu has unconnected port supervisor
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 826.969 ; gain = 650.953
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 826.969 ; gain = 650.953
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/constrs_1/new/mmu_constraints.xdc]
+Finished Parsing XDC File [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/constrs_1/new/mmu_constraints.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 826.969 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 826.969 ; gain = 650.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 826.969 ; gain = 650.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 826.969 ; gain = 650.953
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'ram_controller_state_reg' in module 'AXI_Slave_RAM'
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rid" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5544] ROM "LRU_count_register" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-4471] merging register 'awburst_reg[1:0]' into 'awsize_reg[1:0]' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v:140]
+INFO: [Synth 8-802] inferred FSM for state register 'mmu_state_reg' in module 'mmu'
+INFO: [Synth 8-5544] ROM "physical_address" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "physical_address" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                     Old Encoding 
+---------------------------------------------------------------------------------------------------
+     RAM_CONTROLLER_IDLE |                              000 |                             0000
+      WAIT_FOR_CLK_CYCLE |                              001 |                             0001
+         PUT_DATA_ON_BUS |                              010 |                             0010
+         WAIT_FOR_RREADY |                              011 |                             0011
+         WAIT_FOR_WVALID |                              100 |                             0100
+         WAIT_FOR_BREADY |                              101 |                             0101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ram_controller_state_reg' using encoding 'sequential' in module 'AXI_Slave_RAM'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                     Old Encoding 
+---------------------------------------------------------------------------------------------------
+          MMU_IDLE_STATE |                             0000 |                             0000
+        MMU_CHECK_IN_TLB |                             0001 |                             0001
+        WAIT_FOR_ARREADY |                             0010 |                             0010
+WAIT_FOR_FIRST_DESCRIPTOR |                             0011 |                             0011
+       WAIT_FOR_ARREADY2 |                             0100 |                             0100
+WAIT_FOR_SECOND_DESCRIPTOR |                             0101 |                             0101
+       WRITE_BACK_IN_TLB |                             0110 |                             0110
+MMU_DISABLED_WAIT_FOR_ARREADY |                             0111 |                             0111
+MMU_DISABLED_WAIT_FOR_RVALID |                             1000 |                             1000
+MMU_DISABLED_WAIT_FOR_AWREADY |                             1001 |                             1001
+MMU_DISABLED_WAIT_FOR_WREADY |                             1010 |                             1010
+MMU_DISABLED_WAIT_FOR_BVALID |                             1011 |                             1011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mmu_state_reg' using encoding 'sequential' in module 'mmu'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:01:02 . Memory (MB): peak = 826.969 ; gain = 650.953
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |AXI_Slave_RAM__GB0 |           1|     28462|
+|2     |AXI_Slave_RAM__GB1 |           1|     10736|
+|3     |AXI_Slave_RAM__GB2 |           1|     11761|
+|4     |mmu__GC0           |           1|     13236|
++------+-------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 13    
+	   2 Input     24 Bit       Adders := 9     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 6     
+	   2 Input      1 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 14    
+	               28 Bit    Registers := 1     
+	               24 Bit    Registers := 6     
+	               18 Bit    Registers := 32    
+	                8 Bit    Registers := 74    
+	                4 Bit    Registers := 19    
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 9     
+	                1 Bit    Registers := 18    
++---RAMs : 
+	           32768K Bit         RAMs := 4     
+	              448 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 10    
+	   4 Input     32 Bit        Muxes := 2     
+	   6 Input     32 Bit        Muxes := 3     
+	  12 Input     32 Bit        Muxes := 3     
+	   2 Input     28 Bit        Muxes := 2     
+	  12 Input     28 Bit        Muxes := 1     
+	   4 Input     24 Bit        Muxes := 13    
+	   6 Input     24 Bit        Muxes := 4     
+	   2 Input     24 Bit        Muxes := 2     
+	  12 Input     24 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 12    
+	   2 Input      8 Bit        Muxes := 95    
+	  12 Input      8 Bit        Muxes := 1     
+	  31 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 16    
+	   2 Input      4 Bit        Muxes := 22    
+	   4 Input      4 Bit        Muxes := 5     
+	   6 Input      4 Bit        Muxes := 5     
+	  12 Input      4 Bit        Muxes := 1     
+	  28 Input      4 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 11    
+	   6 Input      2 Bit        Muxes := 1     
+	  12 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 94    
+	   4 Input      1 Bit        Muxes := 44    
+	   6 Input      1 Bit        Muxes := 28    
+	   3 Input      1 Bit        Muxes := 2     
+	  12 Input      1 Bit        Muxes := 29    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module mmu 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	               28 Bit    Registers := 1     
+	               24 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 7     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	  12 Input     32 Bit        Muxes := 3     
+	   2 Input     28 Bit        Muxes := 2     
+	  12 Input     28 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	  12 Input     24 Bit        Muxes := 2     
+	  12 Input      8 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 1     
+	  28 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	  12 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 20    
+	   3 Input      1 Bit        Muxes := 2     
+	  12 Input      1 Bit        Muxes := 29    
+Module RAM__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	           32768K Bit         RAMs := 1     
+Module RAM__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	           32768K Bit         RAMs := 1     
+Module RAM__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	           32768K Bit         RAMs := 1     
+Module RAM 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	           32768K Bit         RAMs := 1     
+Module AXI_Slave_RAM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 13    
+	   2 Input     24 Bit       Adders := 9     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 6     
+	   2 Input      1 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 7     
+	               24 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 12    
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   4 Input     32 Bit        Muxes := 2     
+	   6 Input     32 Bit        Muxes := 3     
+	   4 Input     24 Bit        Muxes := 12    
+	   6 Input     24 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 12    
+	   2 Input      4 Bit        Muxes := 14    
+	   4 Input      4 Bit        Muxes := 5     
+	   6 Input      4 Bit        Muxes := 5     
+	   6 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 7     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 28    
+Module Translation_Buffer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               18 Bit    Registers := 32    
+	                8 Bit    Registers := 65    
++---RAMs : 
+	              448 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     24 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 95    
+	  31 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 16    
+	   2 Input      4 Bit        Muxes := 8     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 64    
+	   4 Input      1 Bit        Muxes := 32    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:49 ; elapsed = 00:01:03 . Memory (MB): peak = 826.969 ; gain = 650.953
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+WARNING: [Synth 8-3331] design mmu has unconnected port instruction
+WARNING: [Synth 8-3331] design mmu has unconnected port supervisor
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:01:09 . Memory (MB): peak = 826.969 ; gain = 650.953
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:54 ; elapsed = 00:01:09 . Memory (MB): peak = 826.969 ; gain = 650.953
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |AXI_Slave_RAM__GB0 |           1|     28801|
+|2     |AXI_Slave_RAM__GB1 |           1|     10742|
+|3     |AXI_Slave_RAM__GB2 |           1|     11794|
+|4     |mmu__GC0           |           1|     13629|
++------+-------------------+------------+----------+
+ERROR: [Synth 8-3202] design needs 8192 RAMB exceeds device capacity of 270
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |GATE_2_11     |   907|
+|2     |GATE_2_14_OR  |  3384|
+|3     |GATE_2_1_NOR  |  1087|
+|4     |GATE_2_2      |  1108|
+|5     |GATE_2_6_XOR  |  1988|
+|6     |GATE_2_7_NAND |  3066|
+|7     |GATE_2_8_AND  |  3460|
+|8     |GATE_2_9_XNOR |   429|
+|9     |INV           |  4109|
+|10    |MUX1          | 36195|
+|11    |MUXCY         |   237|
+|12    |MUXCY_L       |   727|
+|13    |RAM32M        |     3|
+|14    |RAMB36E1      |  4096|
+|15    |XORCY         |   280|
+|16    |FDCE          |   582|
+|17    |FDCPE         |    32|
+|18    |FDE           |  3280|
++------+--------------+------+
+ERROR: design has too many RAMB cells and cannot be implemented on the device.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 826.969 ; gain = 636.070
+INFO: [Common 17-83] Releasing license: Synthesis
+236 Infos, 12 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 04 01:16:23 2018...

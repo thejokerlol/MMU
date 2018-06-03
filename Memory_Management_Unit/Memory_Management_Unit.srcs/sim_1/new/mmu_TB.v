@@ -78,6 +78,7 @@ module mmu_TB(
             
         initial
         begin
+            #100
             #4 reset=0;
             #4 reset=1;
             
