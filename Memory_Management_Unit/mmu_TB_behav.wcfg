@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="mmu_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="mmu_TB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="13" />
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/virtual_address" type="array">
+      <obj_property name="ElementShortName">virtual_address[27:0]</obj_property>
+      <obj_property name="ObjectShortName">virtual_address[27:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/read" type="logic">
+      <obj_property name="ElementShortName">read</obj_property>
+      <obj_property name="ObjectShortName">read</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/enable_RW" type="logic">
+      <obj_property name="ElementShortName">enable_RW</obj_property>
+      <obj_property name="ObjectShortName">enable_RW</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/instruction" type="logic">
+      <obj_property name="ElementShortName">instruction</obj_property>
+      <obj_property name="ObjectShortName">instruction</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/supervisor" type="logic">
+      <obj_property name="ElementShortName">supervisor</obj_property>
+      <obj_property name="ObjectShortName">supervisor</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/fault_address_register" type="logic">
+      <obj_property name="ElementShortName">fault_address_register</obj_property>
+      <obj_property name="ObjectShortName">fault_address_register</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/fault_status_register" type="logic">
+      <obj_property name="ElementShortName">fault_status_register</obj_property>
+      <obj_property name="ObjectShortName">fault_status_register</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/physical_address" type="array">
+      <obj_property name="ElementShortName">physical_address[23:0]</obj_property>
+      <obj_property name="ObjectShortName">physical_address[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/mmu_state" type="array">
+      <obj_property name="ElementShortName">mmu_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">mmu_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group54" type="group">
+      <obj_property name="label">BUS_SIGNALS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/awid" type="array">
+         <obj_property name="ElementShortName">awid[3:0]</obj_property>
+         <obj_property name="ObjectShortName">awid[3:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/awaddr" type="array">
+         <obj_property name="ElementShortName">awaddr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">awaddr[31:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/awlen" type="array">
+         <obj_property name="ElementShortName">awlen[3:0]</obj_property>
+         <obj_property name="ObjectShortName">awlen[3:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/awsize" type="array">
+         <obj_property name="ElementShortName">awsize[1:0]</obj_property>
+         <obj_property name="ObjectShortName">awsize[1:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/awburst" type="array">
+         <obj_property name="ElementShortName">awburst[1:0]</obj_property>
+         <obj_property name="ObjectShortName">awburst[1:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/awvalid" type="logic">
+         <obj_property name="ElementShortName">awvalid</obj_property>
+         <obj_property name="ObjectShortName">awvalid</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/awready" type="logic">
+         <obj_property name="ElementShortName">awready</obj_property>
+         <obj_property name="ObjectShortName">awready</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/wid" type="array">
+         <obj_property name="ElementShortName">wid[3:0]</obj_property>
+         <obj_property name="ObjectShortName">wid[3:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/wdata" type="array">
+         <obj_property name="ElementShortName">wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/wstrb" type="array">
+         <obj_property name="ElementShortName">wstrb[3:0]</obj_property>
+         <obj_property name="ObjectShortName">wstrb[3:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/wlast" type="logic">
+         <obj_property name="ElementShortName">wlast</obj_property>
+         <obj_property name="ObjectShortName">wlast</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/wvalid" type="logic">
+         <obj_property name="ElementShortName">wvalid</obj_property>
+         <obj_property name="ObjectShortName">wvalid</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/wready" type="logic">
+         <obj_property name="ElementShortName">wready</obj_property>
+         <obj_property name="ObjectShortName">wready</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/bid" type="array">
+         <obj_property name="ElementShortName">bid[3:0]</obj_property>
+         <obj_property name="ObjectShortName">bid[3:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/bresp" type="array">
+         <obj_property name="ElementShortName">bresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">bresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/bvalid" type="logic">
+         <obj_property name="ElementShortName">bvalid</obj_property>
+         <obj_property name="ObjectShortName">bvalid</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/bready" type="logic">
+         <obj_property name="ElementShortName">bready</obj_property>
+         <obj_property name="ObjectShortName">bready</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/arid" type="array">
+         <obj_property name="ElementShortName">arid[3:0]</obj_property>
+         <obj_property name="ObjectShortName">arid[3:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/araddr" type="array">
+         <obj_property name="ElementShortName">araddr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">araddr[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/arlen" type="array">
+         <obj_property name="ElementShortName">arlen[3:0]</obj_property>
+         <obj_property name="ObjectShortName">arlen[3:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/arsize" type="array">
+         <obj_property name="ElementShortName">arsize[1:0]</obj_property>
+         <obj_property name="ObjectShortName">arsize[1:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/arburst" type="array">
+         <obj_property name="ElementShortName">arburst[1:0]</obj_property>
+         <obj_property name="ObjectShortName">arburst[1:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/arvalid" type="logic">
+         <obj_property name="ElementShortName">arvalid</obj_property>
+         <obj_property name="ObjectShortName">arvalid</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/arready" type="logic">
+         <obj_property name="ElementShortName">arready</obj_property>
+         <obj_property name="ObjectShortName">arready</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/rid" type="array">
+         <obj_property name="ElementShortName">rid[3:0]</obj_property>
+         <obj_property name="ObjectShortName">rid[3:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/rdata" type="array">
+         <obj_property name="ElementShortName">rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/rresp" type="array">
+         <obj_property name="ElementShortName">rresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">rresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/rlast" type="logic">
+         <obj_property name="ElementShortName">rlast</obj_property>
+         <obj_property name="ObjectShortName">rlast</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/rvalid" type="logic">
+         <obj_property name="ElementShortName">rvalid</obj_property>
+         <obj_property name="ObjectShortName">rvalid</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/rready" type="logic">
+         <obj_property name="ElementShortName">rready</obj_property>
+         <obj_property name="ObjectShortName">rready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group63" type="group">
+      <obj_property name="label">TLB_SIGNALS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_virtual_address" type="array">
+         <obj_property name="ElementShortName">TLB_virtual_address[27:0]</obj_property>
+         <obj_property name="ObjectShortName">TLB_virtual_address[27:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_physical_address_input" type="array">
+         <obj_property name="ElementShortName">TLB_physical_address_input[23:0]</obj_property>
+         <obj_property name="ObjectShortName">TLB_physical_address_input[23:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_properties_input" type="array">
+         <obj_property name="ElementShortName">TLB_properties_input[7:0]</obj_property>
+         <obj_property name="ObjectShortName">TLB_properties_input[7:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_read" type="logic">
+         <obj_property name="ElementShortName">TLB_read</obj_property>
+         <obj_property name="ObjectShortName">TLB_read</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_enable_RW" type="logic">
+         <obj_property name="ElementShortName">TLB_enable_RW</obj_property>
+         <obj_property name="ObjectShortName">TLB_enable_RW</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_physical_address" type="array">
+         <obj_property name="ElementShortName">TLB_physical_address[23:0]</obj_property>
+         <obj_property name="ObjectShortName">TLB_physical_address[23:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_properties" type="array">
+         <obj_property name="ElementShortName">TLB_properties[7:0]</obj_property>
+         <obj_property name="ObjectShortName">TLB_properties[7:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_hit" type="logic">
+         <obj_property name="ElementShortName">TLB_hit</obj_property>
+         <obj_property name="ObjectShortName">TLB_hit</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
