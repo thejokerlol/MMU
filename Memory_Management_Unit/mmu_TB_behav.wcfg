@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="27" />
+   <WVObjectSize size="28" />
    <wvobject db_ref_id="1" fp_name="/mmu_TB/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -327,5 +327,10 @@
    <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/data_out" type="array">
       <obj_property name="ElementShortName">data_out[31:0]</obj_property>
       <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/transfer_length" type="array">
+      <obj_property name="ElementShortName">transfer_length[3:0]</obj_property>
+      <obj_property name="ObjectShortName">transfer_length[3:0]</obj_property>
    </wvobject>
 </wave_config>

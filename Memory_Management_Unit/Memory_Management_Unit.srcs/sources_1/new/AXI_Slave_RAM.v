@@ -484,7 +484,32 @@ module AXI_Slave_RAM(
                         begin
                         end
                     endcase
-                    read_address<=read_address_queue[read_address_read_pointer]+(2**(read_size_queue[read_address_read_pointer]));
+                    case(read_burst_queue[read_address_read_pointer])
+                        2'b00://fixed burst
+                        begin
+                            read_address<=read_address;
+                        end
+                        2'b01://incremental burst
+                        begin
+                            read_address<=read_address+(2**(read_size_queue[read_address_read_pointer]));
+                        end
+                        2'b10://wrapping burst
+                        begin
+                            if(((read_address+4)%(4*(read_len_queue[read_address_read_pointer])))!=0)
+                            begin
+                                read_address<=read_address+(2**(read_size_queue[read_address_read_pointer]));
+                            end
+                            else
+                            begin
+                                read_address<=read_address-(4*(read_len_queue[read_address_read_pointer]-1));
+                            end
+                        end
+                        2'b11://feixed again
+                        begin
+                            read_address<=read_address;
+                        end
+                    endcase
+                    //read_address<=read_address_queue[read_address_read_pointer]+(2**(read_size_queue[read_address_read_pointer]));
                     rvalid<=HIGH;
                     if(no_of_transfers==(read_len_queue[read_address_read_pointer]-1))
                     begin
@@ -659,7 +684,32 @@ module AXI_Slave_RAM(
                                 begin
                                 end
                             endcase
-                            write_address<=write_address+(2**(write_size_queue[write_address_read_pointer]));
+                            case(write_burst_queue[write_address_read_pointer])
+                                2'b00://fixed burst
+                                begin
+                                    write_address<=write_address;
+                                end
+                                2'b01://incremental burst
+                                begin
+                                    write_address<=write_address+(2**(write_size_queue[write_address_read_pointer]));
+                                end
+                                2'b10://wrapping burst
+                                begin
+                                    if(((write_address+4)%(4*(write_len_queue[write_address_read_pointer])))!=0)
+                                    begin
+                                        write_address<=write_address+(2**(write_size_queue[write_address_read_pointer]));
+                                    end
+                                    else
+                                    begin
+                                        write_address<=write_address-(4*(write_len_queue[write_address_read_pointer]-1));
+                                    end
+                                end
+                                2'b11://feixed again
+                                begin
+                                    write_address<=write_address;
+                                end
+                            endcase
+                            //write_address<=write_address+(2**(write_size_queue[write_address_read_pointer]));
                             no_of_transfers<=no_of_transfers+1;
                             ram_controller_state<=WAIT_FOR_WVALID;
                         end

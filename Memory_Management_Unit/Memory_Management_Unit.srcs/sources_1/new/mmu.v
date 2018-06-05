@@ -26,6 +26,8 @@ module mmu(
         reset,
         mmu_enable,
         virtual_address,
+        transfer_length,
+        burst_type,
         read,
         TTBR_read,
         enable_RW,
@@ -42,6 +44,8 @@ module mmu(
     input reset;
     input mmu_enable;
     input[27:0] virtual_address;
+    input[3:0] transfer_length;
+    input[1:0] burst_type;
     input read;
     input TTBR_read;
     input enable_RW;
@@ -123,6 +127,9 @@ module mmu(
    wire[31:0] cache_data_out;
    wire cache_hit; 
     
+    
+    //reg for write transfer
+    reg[3:0] no_of_wr_transfers;
     
     
     
@@ -271,6 +278,8 @@ module mmu(
             no_of_cache_transfers=0;
             
             data_out=0;
+            
+            no_of_wr_transfers=0;
         end
         else
         begin
@@ -300,8 +309,8 @@ module mmu(
                             begin
                                 araddr={4'b0000,virtual_address};
                                 arsize=2'b10;
-                                arlen=1;
-                                arburst=2'b10;
+                                arlen=transfer_length;
+                                arburst=burst_type;
                                 arvalid=1;
                                 mmu_state<=MMU_DISABLED_WAIT_FOR_ARREADY; 
                             end
@@ -309,8 +318,8 @@ module mmu(
                             begin
                                 awaddr={4'b0000,virtual_address};
                                 awsize=2'b10;
-                                awlen=1;
-                                awburst=2'b10;
+                                awlen=transfer_length;
+                                awburst=burst_type;
                                 awvalid=1;
                                 mmu_state<=MMU_DISABLED_WAIT_FOR_AWREADY;
                             end
@@ -373,7 +382,7 @@ module mmu(
                             araddr={rdata[27:10],virtual_address[13:10],2'b00};//address of a second level descriptor
                             arsize=2'b10;
                             arlen=1;
-                            arburst=2'b10;
+                            arburst=2'b01;
                             arvalid=1;
                             mmu_state<=WAIT_FOR_ARREADY2;
                             rready=0;
@@ -476,9 +485,6 @@ module mmu(
                     if(awready)
                     begin
                         awvalid=0;
-                        wdata=data_in;
-                        wstrb=4'b1111;
-                        wvalid=1;
                         mmu_state<=MMU_DISABLED_WAIT_FOR_WREADY;
                     end
                     else
@@ -490,11 +496,32 @@ module mmu(
                 begin
                     if(wready)
                     begin
-                        mmu_state<=MMU_DISABLED_WAIT_FOR_BVALID;
-                        wvalid<=0;
-                        wdata=0;
-                        wstrb=0;
-                        bready=1;
+                        
+                        if(no_of_wr_transfers<awlen)
+                        begin
+                            no_of_wr_transfers<=no_of_wr_transfers+1;
+                            wdata=data_in;
+                            wstrb=4'b1111;
+                            wvalid=1;
+                            if(no_of_wr_transfers==awlen-1)
+                            begin
+                                wlast=1;
+                            end
+                            mmu_state<=MMU_DISABLED_WAIT_FOR_WREADY;
+                            
+                        end
+                        else
+                        begin
+                            mmu_state<=MMU_DISABLED_WAIT_FOR_BVALID;
+                            wvalid<=0;
+                            wdata=0;
+                            wstrb=0;
+                            bready=1;
+                            wlast=0;
+                            no_of_wr_transfers=0;
+                            
+                        end
+                        
                     end
                     else
                     begin
@@ -545,7 +572,7 @@ module mmu(
                         araddr<=physical_address;
                         arlen<=4'b1000;
                         arsize<=2'b10;
-                        arburst<=2'b11;//wrapping burst
+                        arburst<=2'b10;//wrapping burst
                         arvalid<=1;
                         mmu_state<=CACHE_ADDRESS_ON_BUS;
                         
@@ -621,7 +648,7 @@ module mmu(
                         awlen<=1;
                         awsize<=2'b10;
                         awvalid<=1;
-                        awburst<=2'b00;
+                        awburst<=2'b10;
                         mmu_state<=WAIT_FOR_AWADDRESS_TRANSFER;
                     end
                 end

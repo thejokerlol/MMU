@@ -37,12 +37,16 @@ module mmu_TB(
     wire[21:0] physical_address;
     reg[31:0] data_in;
     wire[31:0] data_out;
+    reg[3:0] transfer_length;
+    reg[1:0] burst_type;
     
     mmu Mmemory_Management_Unit(
             clk,
             reset,
             mmu_enable,
             virtual_address,
+            transfer_length,
+            burst_type,
             read,
             TTBR_read,
             enable_RW,
@@ -67,6 +71,8 @@ module mmu_TB(
             instruction=0;//data access
             supervisor=0;//its an OS accessing the data
             data_in=0;
+            transfer_length=0;
+            burst_type=0;
         end
         initial
         begin
@@ -86,6 +92,8 @@ module mmu_TB(
                 read=0;
                 virtual_address=28'd65532;
                 data_in=32'h57e00002;// section descriptor
+                transfer_length=1;
+                burst_type=1;
             
             #40 enable_RW=0;
             
@@ -115,6 +123,22 @@ module mmu_TB(
                 data_in=32'h0007f002;//  second page descriptor
             
             #40 enable_RW=0;
+            
+            
+            //cache address writing
+            #240 
+            #40 enable_RW=1;
+                read=0;
+                virtual_address=28'h02ffabc;
+                data_in=32'h32333435;
+                transfer_length=8;
+                burst_type=2'b10;
+            #40 enable_RW=0;
+            
+            
+            #600
+            
+            
             
             //this is where the section is checked
             #240 mmu_enable=1;
