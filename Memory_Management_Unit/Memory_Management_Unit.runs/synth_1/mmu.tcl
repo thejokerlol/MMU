@@ -22,6 +22,6 @@ read_verilog -library xil_defaultlib {
 read_xdc C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/constrs_1/new/mmu_constraints.xdc
 set_property used_in_implementation false [get_files C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/constrs_1/new/mmu_constraints.xdc]
 
-synth_design -top mmu -part xc7a100tcsg324-1
+synth_design -top mmu -part xc7a100tcsg324-1 -flatten_hierarchy none
 write_checkpoint -noxdef mmu.dcp
 catch { report_utilization -file mmu_utilization_synth.rpt -pb mmu_utilization_synth.pb }

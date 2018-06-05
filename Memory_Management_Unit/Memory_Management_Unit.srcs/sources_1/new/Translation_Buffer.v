@@ -39,15 +39,15 @@ module Translation_Buffer(
     input[27:0] virtual_address;
     input read;
     input enable_RW;
-    input[23:0] physical_address_input;
+    input[21:0] physical_address_input;
     input[7:0] properties_input;
-    output reg[23:0] physical_address;
+    output reg[21:0] physical_address;
     output reg[7:0] properties;
     output reg hit;
     
     reg[31:0] valid;
     reg[27:10] virtual_page_memory[0:31];
-    reg[23:10] physical_page_memory[0:31];
+    reg[21:10] physical_page_memory[0:31];
     reg[7:0] properties_memory[0:31];
     
     reg[7:0] time_stamp;
@@ -58,6 +58,9 @@ module Translation_Buffer(
     reg[0:31] comp_output;
     
     reg[4:0] decoder_output;
+    
+    //LRU count numbers;
+    reg[4:0] count_numbers[0:31];
     
     //not so trivial
     genvar tag_no;
@@ -186,16 +189,16 @@ module Translation_Buffer(
             case(properties_memory[decoder_output][7:6])
                 2'b00://a section
                 begin
-                    physical_address={physical_page_memory[decoder_output][23:14],virtual_address[13:0]};
+                    physical_address={physical_page_memory[decoder_output][21:14],virtual_address[13:0]};
                     
                 end
                 2'b01://a small page
                 begin
-                    physical_address={physical_page_memory[decoder_output][23:10],virtual_address[9:0]};
+                    physical_address={physical_page_memory[decoder_output][21:10],virtual_address[9:0]};
                 end
                 2'b10://a large page
                 begin
-                    physical_address={physical_page_memory[decoder_output][23:12],virtual_address[11:0]};
+                    physical_address={physical_page_memory[decoder_output][21:12],virtual_address[11:0]};
                 end
                 2'b11://not used
                 begin
@@ -239,7 +242,7 @@ module Translation_Buffer(
         begin
            virtual_page_memory[LRU_location]<=virtual_address[27:10];
            properties_memory[LRU_location]<=properties_input;
-           physical_page_memory[LRU_location]<=physical_address_input[23:10];
+           physical_page_memory[LRU_location]<=physical_address_input[21:10];
         end
     end
     
@@ -292,7 +295,6 @@ module Translation_Buffer(
 always@(*)
 begin
     LRU_location=LRU_no[30];
-end    
-    
+end
     
 endmodule

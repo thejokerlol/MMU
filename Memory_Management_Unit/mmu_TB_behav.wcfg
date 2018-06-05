@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="24" />
+   <WVObjectSize size="27" />
    <wvobject db_ref_id="1" fp_name="/mmu_TB/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -49,17 +49,18 @@
       <obj_property name="ObjectShortName">fault_status_register[3:0]</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/mmu_TB/physical_address" type="array">
-      <obj_property name="ElementShortName">physical_address[23:0]</obj_property>
-      <obj_property name="ObjectShortName">physical_address[23:0]</obj_property>
+      <obj_property name="ElementShortName">physical_address[21:0]</obj_property>
+      <obj_property name="ObjectShortName">physical_address[21:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/mmu_state" type="array">
-      <obj_property name="ElementShortName">mmu_state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">mmu_state[3:0]</obj_property>
+      <obj_property name="ElementShortName">mmu_state[4:0]</obj_property>
+      <obj_property name="ObjectShortName">mmu_state[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/address[0]" type="array">
-      <obj_property name="ElementShortName">[0][23:0]</obj_property>
-      <obj_property name="ObjectShortName">address[0][23:0]</obj_property>
+      <obj_property name="ElementShortName">[0][21:0]</obj_property>
+      <obj_property name="ObjectShortName">address[0][21:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="group54" type="group">
@@ -198,8 +199,8 @@
          <obj_property name="ObjectShortName">TLB_virtual_address[27:0]</obj_property>
       </wvobject>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_physical_address_input" type="array">
-         <obj_property name="ElementShortName">TLB_physical_address_input[23:0]</obj_property>
-         <obj_property name="ObjectShortName">TLB_physical_address_input[23:0]</obj_property>
+         <obj_property name="ElementShortName">TLB_physical_address_input[21:0]</obj_property>
+         <obj_property name="ObjectShortName">TLB_physical_address_input[21:0]</obj_property>
       </wvobject>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_properties_input" type="array">
          <obj_property name="ElementShortName">TLB_properties_input[7:0]</obj_property>
@@ -214,8 +215,8 @@
          <obj_property name="ObjectShortName">TLB_enable_RW</obj_property>
       </wvobject>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_physical_address" type="array">
-         <obj_property name="ElementShortName">TLB_physical_address[23:0]</obj_property>
-         <obj_property name="ObjectShortName">TLB_physical_address[23:0]</obj_property>
+         <obj_property name="ElementShortName">TLB_physical_address[21:0]</obj_property>
+         <obj_property name="ObjectShortName">TLB_physical_address[21:0]</obj_property>
       </wvobject>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/TLB_properties" type="array">
          <obj_property name="ElementShortName">TLB_properties[7:0]</obj_property>
@@ -227,27 +228,28 @@
       </wvobject>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/address" type="array">
-      <obj_property name="ElementShortName">address[3:0][23:0]</obj_property>
-      <obj_property name="ObjectShortName">address[3:0][23:0]</obj_property>
+      <obj_property name="ElementShortName">address[3:0][21:0]</obj_property>
+      <obj_property name="ObjectShortName">address[3:0][21:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/address[3]" type="array">
-         <obj_property name="ElementShortName">[3][23:0]</obj_property>
-         <obj_property name="ObjectShortName">address[3][23:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="ElementShortName">[3][21:0]</obj_property>
+         <obj_property name="ObjectShortName">address[3][21:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/address[2]" type="array">
-         <obj_property name="ElementShortName">[2][23:0]</obj_property>
-         <obj_property name="ObjectShortName">address[2][23:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="ElementShortName">[2][21:0]</obj_property>
+         <obj_property name="ObjectShortName">address[2][21:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/address[1]" type="array">
-         <obj_property name="ElementShortName">[1][23:0]</obj_property>
-         <obj_property name="ObjectShortName">address[1][23:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="ElementShortName">[1][21:0]</obj_property>
+         <obj_property name="ObjectShortName">address[1][21:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/address[0]" type="array">
-         <obj_property name="ElementShortName">[0][23:0]</obj_property>
-         <obj_property name="ObjectShortName">address[0][23:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="ElementShortName">[0][21:0]</obj_property>
+         <obj_property name="ObjectShortName">address[0][21:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/read" type="array">
@@ -281,9 +283,49 @@
    <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/ram_controller_state" type="array">
       <obj_property name="ElementShortName">ram_controller_state[3:0]</obj_property>
       <obj_property name="ObjectShortName">ram_controller_state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/DRAM_Slave/no_of_transfers" type="array">
-      <obj_property name="ElementShortName">no_of_transfers[2:0]</obj_property>
-      <obj_property name="ObjectShortName">no_of_transfers[2:0]</obj_property>
+      <obj_property name="ElementShortName">no_of_transfers[3:0]</obj_property>
+      <obj_property name="ObjectShortName">no_of_transfers[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group85" type="group">
+      <obj_property name="label">CACHE_SIGNALS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/cache_address" type="array">
+         <obj_property name="ElementShortName">cache_address[21:0]</obj_property>
+         <obj_property name="ObjectShortName">cache_address[21:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/cache_read" type="logic">
+         <obj_property name="ElementShortName">cache_read</obj_property>
+         <obj_property name="ObjectShortName">cache_read</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/cache_enable_RW" type="logic">
+         <obj_property name="ElementShortName">cache_enable_RW</obj_property>
+         <obj_property name="ObjectShortName">cache_enable_RW</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/cache_data_in" type="array">
+         <obj_property name="ElementShortName">cache_data_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">cache_data_in[31:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/cache_data_out" type="array">
+         <obj_property name="ElementShortName">cache_data_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">cache_data_out[31:0]</obj_property>
+      </wvobject>
+      <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/cache_hit" type="logic">
+         <obj_property name="ElementShortName">cache_hit</obj_property>
+         <obj_property name="ObjectShortName">cache_hit</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/mmu_TB/Mmemory_Management_Unit/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
    </wvobject>
 </wave_config>

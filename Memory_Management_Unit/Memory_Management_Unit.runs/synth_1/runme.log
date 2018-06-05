@@ -16,7 +16,7 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-1223] The version limit for your license is '2017.08' and will expire in -277 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 244.918 ; gain = 68.902
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 244.504 ; gain = 68.754
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'mmu' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v:23]
 	Parameter MMU_IDLE_STATE bound to: 4'b0000 
@@ -44,8 +44,8 @@ INFO: [Synth 8-638] synthesizing module 'AXI_Slave_RAM' [C:/Users/vamsi/Desktop/
 	Parameter READ_ADDRESS_BUSY_STATE bound to: 1'b1 
 INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/RAM.v:23]
 	Parameter DATA_WIDTH bound to: 8 - type: integer 
-	Parameter ADDRESS_WIDTH bound to: 24 - type: integer 
-	Parameter RAM_DEPTH bound to: 4194304 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 22 - type: integer 
+	Parameter RAM_DEPTH bound to: 1048576 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RAM' (1#1) [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/RAM.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/AXI_Slave_RAM.v:381]
 WARNING: [Synth 8-4767] Trying to implement RAM 'read_size_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
@@ -80,7 +80,7 @@ INFO: [Synth 8-256] done synthesizing module 'mmu' (4#1) [C:/Users/vamsi/Desktop
 WARNING: [Synth 8-3331] design mmu has unconnected port instruction
 WARNING: [Synth 8-3331] design mmu has unconnected port supervisor
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 826.969 ; gain = 650.953
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 414.227 ; gain = 238.477
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -90,7 +90,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 826.969 ; gain = 650.953
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 414.227 ; gain = 238.477
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -104,22 +104,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 826.969 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 615.453 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 826.969 ; gain = 650.953
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 615.453 ; gain = 439.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 826.969 ; gain = 650.953
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 615.453 ; gain = 439.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 826.969 ; gain = 650.953
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 615.453 ; gain = 439.703
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'ram_controller_state_reg' in module 'AXI_Slave_RAM'
 INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
@@ -320,17 +320,16 @@ MMU_DISABLED_WAIT_FOR_BVALID |                             1011 |               
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'mmu_state_reg' using encoding 'sequential' in module 'mmu'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:01:02 . Memory (MB): peak = 826.969 ; gain = 650.953
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 615.453 ; gain = 439.703
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-------------------+------------+----------+
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
-|1     |AXI_Slave_RAM__GB0 |           1|     28462|
-|2     |AXI_Slave_RAM__GB1 |           1|     10736|
-|3     |AXI_Slave_RAM__GB2 |           1|     11761|
-|4     |mmu__GC0           |           1|     13236|
+|1     |AXI_Slave_RAM__GB0 |           1|     30765|
+|2     |AXI_Slave_RAM__GB1 |           1|      9476|
+|3     |mmu__GC0           |           1|     13214|
 +------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -338,7 +337,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 13    
-	   2 Input     24 Bit       Adders := 9     
+	   2 Input     22 Bit       Adders := 9     
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 6     
@@ -346,7 +345,7 @@ Detailed RTL Component Info :
 +---Registers : 
 	               32 Bit    Registers := 14    
 	               28 Bit    Registers := 1     
-	               24 Bit    Registers := 6     
+	               22 Bit    Registers := 6     
 	               18 Bit    Registers := 32    
 	                8 Bit    Registers := 74    
 	                4 Bit    Registers := 19    
@@ -354,8 +353,8 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 9     
 	                1 Bit    Registers := 18    
 +---RAMs : 
-	           32768K Bit         RAMs := 4     
-	              448 Bit         RAMs := 1     
+	            8192K Bit         RAMs := 4     
+	              384 Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 10    
 	   4 Input     32 Bit        Muxes := 2     
@@ -363,10 +362,10 @@ Detailed RTL Component Info :
 	  12 Input     32 Bit        Muxes := 3     
 	   2 Input     28 Bit        Muxes := 2     
 	  12 Input     28 Bit        Muxes := 1     
-	   4 Input     24 Bit        Muxes := 13    
-	   6 Input     24 Bit        Muxes := 4     
-	   2 Input     24 Bit        Muxes := 2     
-	  12 Input     24 Bit        Muxes := 2     
+	   4 Input     22 Bit        Muxes := 13    
+	   6 Input     22 Bit        Muxes := 4     
+	   2 Input     22 Bit        Muxes := 2     
+	  12 Input     22 Bit        Muxes := 2     
 	   4 Input      8 Bit        Muxes := 12    
 	   2 Input      8 Bit        Muxes := 95    
 	  12 Input      8 Bit        Muxes := 1     
@@ -400,7 +399,7 @@ Detailed RTL Component Info :
 +---Registers : 
 	               32 Bit    Registers := 6     
 	               28 Bit    Registers := 1     
-	               24 Bit    Registers := 2     
+	               22 Bit    Registers := 2     
 	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 7     
 	                2 Bit    Registers := 3     
@@ -410,8 +409,8 @@ Detailed RTL Component Info :
 	  12 Input     32 Bit        Muxes := 3     
 	   2 Input     28 Bit        Muxes := 2     
 	  12 Input     28 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 1     
-	  12 Input     24 Bit        Muxes := 2     
+	   2 Input     22 Bit        Muxes := 1     
+	  12 Input     22 Bit        Muxes := 2     
 	  12 Input      8 Bit        Muxes := 1     
 	  12 Input      4 Bit        Muxes := 1     
 	  28 Input      4 Bit        Muxes := 1     
@@ -425,36 +424,36 @@ Detailed RTL Component Info :
 +---Registers : 
 	                8 Bit    Registers := 1     
 +---RAMs : 
-	           32768K Bit         RAMs := 1     
+	            8192K Bit         RAMs := 1     
 Module RAM__2 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
 +---RAMs : 
-	           32768K Bit         RAMs := 1     
+	            8192K Bit         RAMs := 1     
 Module RAM__3 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
 +---RAMs : 
-	           32768K Bit         RAMs := 1     
+	            8192K Bit         RAMs := 1     
 Module RAM 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
 +---RAMs : 
-	           32768K Bit         RAMs := 1     
+	            8192K Bit         RAMs := 1     
 Module AXI_Slave_RAM 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 13    
-	   2 Input     24 Bit       Adders := 9     
+	   2 Input     22 Bit       Adders := 9     
 	   2 Input      3 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 6     
 	   2 Input      1 Bit       Adders := 4     
 +---Registers : 
 	               32 Bit    Registers := 7     
-	               24 Bit    Registers := 4     
+	               22 Bit    Registers := 4     
 	                8 Bit    Registers := 4     
 	                4 Bit    Registers := 12    
 	                3 Bit    Registers := 1     
@@ -464,8 +463,8 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit        Muxes := 6     
 	   4 Input     32 Bit        Muxes := 2     
 	   6 Input     32 Bit        Muxes := 3     
-	   4 Input     24 Bit        Muxes := 12    
-	   6 Input     24 Bit        Muxes := 4     
+	   4 Input     22 Bit        Muxes := 12    
+	   6 Input     22 Bit        Muxes := 4     
 	   4 Input      8 Bit        Muxes := 12    
 	   2 Input      4 Bit        Muxes := 14    
 	   4 Input      4 Bit        Muxes := 5     
@@ -486,11 +485,11 @@ Detailed RTL Component Info :
 	               18 Bit    Registers := 32    
 	                8 Bit    Registers := 65    
 +---RAMs : 
-	              448 Bit         RAMs := 1     
+	              384 Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
-	   4 Input     24 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 1     
+	   4 Input     22 Bit        Muxes := 1     
+	   2 Input     22 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 95    
 	  31 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 16    
@@ -511,7 +510,7 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:49 ; elapsed = 00:01:03 . Memory (MB): peak = 826.969 ; gain = 650.953
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 615.453 ; gain = 439.703
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -525,89 +524,1102 @@ INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address
 INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
-INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
 WARNING: [Synth 8-3331] design mmu has unconnected port instruction
 WARNING: [Synth 8-3331] design mmu has unconnected port supervisor
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:01:09 . Memory (MB): peak = 826.969 ; gain = 650.953
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 615.453 ; gain = 439.703
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:54 ; elapsed = 00:01:09 . Memory (MB): peak = 826.969 ; gain = 650.953
+Finished Parallel Reinference  : Time (s): cpu = 00:00:38 ; elapsed = 00:00:42 . Memory (MB): peak = 615.453 ; gain = 439.703
 
 Report RTL Partitions: 
 +------+-------------------+------------+----------+
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
-|1     |AXI_Slave_RAM__GB0 |           1|     28801|
-|2     |AXI_Slave_RAM__GB1 |           1|     10742|
-|3     |AXI_Slave_RAM__GB2 |           1|     11794|
-|4     |mmu__GC0           |           1|     13629|
+|1     |AXI_Slave_RAM__GB0 |           1|     31176|
+|2     |AXI_Slave_RAM__GB1 |           1|      9373|
+|3     |mmu__GC0           |           1|     13605|
 +------+-------------------+------------+----------+
-ERROR: [Synth 8-3202] design needs 8192 RAMB exceeds device capacity of 270
+WARNING: [Synth 8-3323] Resources of type BRAM have been overutilized. Used = 2048, Available = 270. Use report_utilization command for details.
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
 
-Report Cell Usage: 
-+------+--------------+------+
-|      |Cell          |Count |
-+------+--------------+------+
-|1     |GATE_2_11     |   907|
-|2     |GATE_2_14_OR  |  3384|
-|3     |GATE_2_1_NOR  |  1087|
-|4     |GATE_2_2      |  1108|
-|5     |GATE_2_6_XOR  |  1988|
-|6     |GATE_2_7_NAND |  3066|
-|7     |GATE_2_8_AND  |  3460|
-|8     |GATE_2_9_XNOR |   429|
-|9     |INV           |  4109|
-|10    |MUX1          | 36195|
-|11    |MUXCY         |   237|
-|12    |MUXCY_L       |   727|
-|13    |RAM32M        |     3|
-|14    |RAMB36E1      |  4096|
-|15    |XORCY         |   280|
-|16    |FDCE          |   582|
-|17    |FDCPE         |    32|
-|18    |FDE           |  3280|
-+------+--------------+------+
-ERROR: design has too many RAMB cells and cannot be implemented on the device.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:51 . Memory (MB): peak = 826.969 ; gain = 636.070
-INFO: [Common 17-83] Releasing license: Synthesis
-236 Infos, 12 Warnings, 0 Critical Warnings and 2 Errors encountered.
-synth_design failed
-ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
-INFO: [Common 17-206] Exiting Vivado at Mon Jun 04 01:16:23 2018...
+Block RAM:
++-------------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+-------------------+
+|Module Name        | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG | RAMB18 | RAMB36 | Hierarchical Name | 
++-------------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+-------------------+
+|AXI_Slave_RAM__GB0 | mem_reg    | 1024 K x 8             | W | R |                        |   |   | Port A  | 0      | 256    | RAM/extram__6     | 
+|AXI_Slave_RAM__GB0 | mem_reg    | 1024 K x 8             | W | R |                        |   |   | Port A  | 0      | 256    | RAM/extram__8     | 
+|AXI_Slave_RAM__GB0 | mem_reg    | 1024 K x 8             | W | R |                        |   |   | Port A  | 0      | 256    | RAM/extram__10    | 
+|AXI_Slave_RAM__GB0 | mem_reg    | 1024 K x 8             | W | R |                        |   |   | Port A  | 0      | 256    | RAM/extram__12    | 
++-------------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+-------------------+
+
+Note: The table shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. "Hierarchical Name" reflects the Block RAM name as it appears in the hierarchical module and only part of it is displayed.
+Distributed RAM: 
++-------------------+--------------------------+-----------+----------------------+---------------------+---------------------------+
+|Module Name        | RTL Object               | Inference | Size (Depth x Width) | Primitives          | Hierarchical Name         | 
++-------------------+--------------------------+-----------+----------------------+---------------------+---------------------------+
+|mmu__GC0           | physical_page_memory_reg | Implied   | 32 x 12              | RAM32M x 2          | Translation_Buffer/ram__1 | 
+|AXI_Slave_RAM__GB0 | mem_reg                  | Implied   | 1024 K x 8           | RAM256X1S x 32768   | RAM/ram__2                | 
+|AXI_Slave_RAM__GB0 | mem_reg                  | Implied   | 1024 K x 8           | RAM256X1S x 32768   | RAM/ram__3                | 
+|AXI_Slave_RAM__GB0 | mem_reg                  | Implied   | 1024 K x 8           | RAM256X1S x 32768   | RAM/ram__4                | 
+|AXI_Slave_RAM__GB0 | mem_reg                  | Implied   | 1024 K x 8           | RAM256X1S x 32768   | RAM/ram__5                | 
++-------------------+--------------------------+-----------+----------------------+---------------------+---------------------------+
+
+Note: The table shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the Distributed RAM name as it appears in the hierarchical module and only part of it is displayed.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[15][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[15][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[15][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[15][2] ) is unused and will be removed from module Translation_Buffer.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\TLB_properties_input_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\arlen_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\awaddr_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_status_register_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_status_register_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_status_register_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_status_register_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/\fault_address_register_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[17][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[16][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[19][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[18][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[23][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[22][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[21][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[20][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[29][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[28][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[31][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[30][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[25][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[24][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[27][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[26][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[1][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[3][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[2][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[7][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[6][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[5][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[4][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[13][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[12][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[15][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[14][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[9][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[8][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[11][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_2/translationbuffer/\properties_memory_reg[10][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DRAM_Slavei_0/\read_len_queue_reg[1][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DRAM_Slavei_0/\read_len_queue_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DRAM_Slavei_0/\write_size_queue_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DRAM_Slavei_0/\write_size_queue_reg[0][0] )
+
+*** Running vivado
+    with args -log mmu.vds -m64 -mode batch -messageDb vivado.pb -notrace -source mmu.tcl
+
+WARNING: Default location for XILINX_VIVADO_HLS not found: 
+
+****** Vivado v2015.2 (64-bit)
+  **** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+  **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source mmu.tcl -notrace
+Command: synth_design -top mmu -part xc7a100tcsg324-1 -flatten_hierarchy none
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-1223] The version limit for your license is '2017.08' and will expire in -277 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 244.469 ; gain = 68.441
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mmu' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v:23]
+	Parameter MMU_IDLE_STATE bound to: 4'b0000 
+	Parameter MMU_CHECK_IN_TLB bound to: 4'b0001 
+	Parameter WAIT_FOR_ARREADY bound to: 4'b0010 
+	Parameter WAIT_FOR_FIRST_DESCRIPTOR bound to: 4'b0011 
+	Parameter WAIT_FOR_ARREADY2 bound to: 4'b0100 
+	Parameter WAIT_FOR_SECOND_DESCRIPTOR bound to: 4'b0101 
+	Parameter WRITE_BACK_IN_TLB bound to: 4'b0110 
+	Parameter MMU_DISABLED_WAIT_FOR_ARREADY bound to: 4'b0111 
+	Parameter MMU_DISABLED_WAIT_FOR_RVALID bound to: 4'b1000 
+	Parameter MMU_DISABLED_WAIT_FOR_AWREADY bound to: 4'b1001 
+	Parameter MMU_DISABLED_WAIT_FOR_WREADY bound to: 4'b1010 
+	Parameter MMU_DISABLED_WAIT_FOR_BVALID bound to: 4'b1011 
+INFO: [Synth 8-638] synthesizing module 'AXI_Slave_RAM' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/AXI_Slave_RAM.v:23]
+	Parameter HIGH bound to: 1'b1 
+	Parameter LOW bound to: 1'b0 
+	Parameter RAM_CONTROLLER_IDLE bound to: 4'b0000 
+	Parameter WAIT_FOR_CLK_CYCLE bound to: 4'b0001 
+	Parameter PUT_DATA_ON_BUS bound to: 4'b0010 
+	Parameter WAIT_FOR_RREADY bound to: 4'b0011 
+	Parameter WAIT_FOR_WVALID bound to: 4'b0100 
+	Parameter WAIT_FOR_BREADY bound to: 4'b0101 
+	Parameter READ_ADDRESS_IDLE_STATE bound to: 1'b0 
+	Parameter READ_ADDRESS_BUSY_STATE bound to: 1'b1 
+INFO: [Synth 8-638] synthesizing module 'RAM' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/RAM.v:23]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 22 - type: integer 
+	Parameter RAM_DEPTH bound to: 1048576 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RAM' (1#1) [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/RAM.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/AXI_Slave_RAM.v:381]
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_size_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_size_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_address_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_address_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_size_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_size_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_len_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_len_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_len_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_len_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_id_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_id_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'read_id_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "read_id_queue_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'write_address_queue_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+RAM "write_address_queue_reg" dissolved into registers
+INFO: [Synth 8-256] done synthesizing module 'AXI_Slave_RAM' (2#1) [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/AXI_Slave_RAM.v:23]
+INFO: [Synth 8-638] synthesizing module 'Translation_Buffer' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/Translation_Buffer.v:24]
+INFO: [Synth 8-256] done synthesizing module 'Translation_Buffer' (3#1) [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/Translation_Buffer.v:24]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v:238]
+INFO: [Synth 8-256] done synthesizing module 'mmu' (4#1) [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v:23]
+WARNING: [Synth 8-3331] design mmu has unconnected port instruction
+WARNING: [Synth 8-3331] design mmu has unconnected port supervisor
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 414.168 ; gain = 238.141
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:23 . Memory (MB): peak = 414.168 ; gain = 238.141
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/constrs_1/new/mmu_constraints.xdc]
+Finished Parsing XDC File [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/constrs_1/new/mmu_constraints.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 615.363 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 615.363 ; gain = 439.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 615.363 ; gain = 439.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 615.363 ; gain = 439.336
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'ram_controller_state_reg' in module 'AXI_Slave_RAM'
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rid" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ram_controller_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LRU_count_register_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "virtual_page_memory_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5544] ROM "LRU_count_register" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-4471] merging register 'awburst_reg[1:0]' into 'awsize_reg[1:0]' [C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v:140]
+INFO: [Synth 8-802] inferred FSM for state register 'mmu_state_reg' in module 'mmu'
+INFO: [Synth 8-5544] ROM "physical_address" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "physical_address" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mmu_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                     Old Encoding 
+---------------------------------------------------------------------------------------------------
+     RAM_CONTROLLER_IDLE |                              000 |                             0000
+      WAIT_FOR_CLK_CYCLE |                              001 |                             0001
+         PUT_DATA_ON_BUS |                              010 |                             0010
+         WAIT_FOR_RREADY |                              011 |                             0011
+         WAIT_FOR_WVALID |                              100 |                             0100
+         WAIT_FOR_BREADY |                              101 |                             0101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ram_controller_state_reg' using encoding 'sequential' in module 'AXI_Slave_RAM'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                     Old Encoding 
+---------------------------------------------------------------------------------------------------
+          MMU_IDLE_STATE |                             0000 |                             0000
+        MMU_CHECK_IN_TLB |                             0001 |                             0001
+        WAIT_FOR_ARREADY |                             0010 |                             0010
+WAIT_FOR_FIRST_DESCRIPTOR |                             0011 |                             0011
+       WAIT_FOR_ARREADY2 |                             0100 |                             0100
+WAIT_FOR_SECOND_DESCRIPTOR |                             0101 |                             0101
+       WRITE_BACK_IN_TLB |                             0110 |                             0110
+MMU_DISABLED_WAIT_FOR_ARREADY |                             0111 |                             0111
+MMU_DISABLED_WAIT_FOR_RVALID |                             1000 |                             1000
+MMU_DISABLED_WAIT_FOR_AWREADY |                             1001 |                             1001
+MMU_DISABLED_WAIT_FOR_WREADY |                             1010 |                             1010
+MMU_DISABLED_WAIT_FOR_BVALID |                             1011 |                             1011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mmu_state_reg' using encoding 'sequential' in module 'mmu'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:50 . Memory (MB): peak = 615.363 ; gain = 439.336
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |AXI_Slave_RAM__GB0 |           1|     30765|
+|2     |AXI_Slave_RAM__GB1 |           1|      9476|
+|3     |mmu__GC0           |           1|     13214|
++------+-------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 13    
+	   2 Input     22 Bit       Adders := 9     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 6     
+	   2 Input      1 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 14    
+	               28 Bit    Registers := 1     
+	               22 Bit    Registers := 6     
+	               18 Bit    Registers := 32    
+	                8 Bit    Registers := 74    
+	                4 Bit    Registers := 19    
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 9     
+	                1 Bit    Registers := 18    
++---RAMs : 
+	            8192K Bit         RAMs := 4     
+	              384 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 10    
+	   4 Input     32 Bit        Muxes := 2     
+	   6 Input     32 Bit        Muxes := 3     
+	  12 Input     32 Bit        Muxes := 3     
+	   2 Input     28 Bit        Muxes := 2     
+	  12 Input     28 Bit        Muxes := 1     
+	   4 Input     22 Bit        Muxes := 13    
+	   6 Input     22 Bit        Muxes := 4     
+	   2 Input     22 Bit        Muxes := 2     
+	  12 Input     22 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 12    
+	   2 Input      8 Bit        Muxes := 95    
+	  12 Input      8 Bit        Muxes := 1     
+	  31 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 16    
+	   2 Input      4 Bit        Muxes := 22    
+	   4 Input      4 Bit        Muxes := 5     
+	   6 Input      4 Bit        Muxes := 5     
+	  12 Input      4 Bit        Muxes := 1     
+	  28 Input      4 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 11    
+	   6 Input      2 Bit        Muxes := 1     
+	  12 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 94    
+	   4 Input      1 Bit        Muxes := 44    
+	   6 Input      1 Bit        Muxes := 28    
+	   3 Input      1 Bit        Muxes := 2     
+	  12 Input      1 Bit        Muxes := 29    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module mmu 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	               28 Bit    Registers := 1     
+	               22 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 7     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	  12 Input     32 Bit        Muxes := 3     
+	   2 Input     28 Bit        Muxes := 2     
+	  12 Input     28 Bit        Muxes := 1     
+	   2 Input     22 Bit        Muxes := 1     
+	  12 Input     22 Bit        Muxes := 2     
+	  12 Input      8 Bit        Muxes := 1     
+	  12 Input      4 Bit        Muxes := 1     
+	  28 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	  12 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 20    
+	   3 Input      1 Bit        Muxes := 2     
+	  12 Input      1 Bit        Muxes := 29    
+Module RAM__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	            8192K Bit         RAMs := 1     
+Module RAM__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	            8192K Bit         RAMs := 1     
+Module RAM__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	            8192K Bit         RAMs := 1     
+Module RAM 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	            8192K Bit         RAMs := 1     
+Module AXI_Slave_RAM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 13    
+	   2 Input     22 Bit       Adders := 9     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 6     
+	   2 Input      1 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 7     
+	               22 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 12    
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   4 Input     32 Bit        Muxes := 2     
+	   6 Input     32 Bit        Muxes := 3     
+	   4 Input     22 Bit        Muxes := 12    
+	   6 Input     22 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 12    
+	   2 Input      4 Bit        Muxes := 14    
+	   4 Input      4 Bit        Muxes := 5     
+	   6 Input      4 Bit        Muxes := 5     
+	   6 Input      3 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 7     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 28    
+Module Translation_Buffer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               18 Bit    Registers := 32    
+	                8 Bit    Registers := 65    
++---RAMs : 
+	              384 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     22 Bit        Muxes := 1     
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 95    
+	  31 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 16    
+	   2 Input      4 Bit        Muxes := 8     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 64    
+	   4 Input      1 Bit        Muxes := 32    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:35 ; elapsed = 00:00:50 . Memory (MB): peak = 615.363 ; gain = 439.336
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[3]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[2]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[1]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+INFO: [Synth 8-5545] ROM "address_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(18)
+WARNING: [Synth 8-3331] design mmu has unconnected port instruction
+WARNING: [Synth 8-3331] design mmu has unconnected port supervisor
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:56 . Memory (MB): peak = 615.363 ; gain = 439.336
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:56 . Memory (MB): peak = 615.363 ; gain = 439.336
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |AXI_Slave_RAM__GB0 |           1|     31176|
+|2     |AXI_Slave_RAM__GB1 |           1|      9373|
+|3     |mmu__GC0           |           1|     13605|
++------+-------------------+------------+----------+
+WARNING: [Synth 8-3323] Resources of type BRAM have been overutilized. Used = 2048, Available = 270. Use report_utilization command for details.
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM:
++-------------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+-------------------+
+|Module Name        | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG | RAMB18 | RAMB36 | Hierarchical Name | 
++-------------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+-------------------+
+|AXI_Slave_RAM__GB0 | mem_reg    | 1024 K x 8             | W | R |                        |   |   | Port A  | 0      | 256    | RAM/extram__6     | 
+|AXI_Slave_RAM__GB0 | mem_reg    | 1024 K x 8             | W | R |                        |   |   | Port A  | 0      | 256    | RAM/extram__8     | 
+|AXI_Slave_RAM__GB0 | mem_reg    | 1024 K x 8             | W | R |                        |   |   | Port A  | 0      | 256    | RAM/extram__10    | 
+|AXI_Slave_RAM__GB0 | mem_reg    | 1024 K x 8             | W | R |                        |   |   | Port A  | 0      | 256    | RAM/extram__12    | 
++-------------------+------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+-------------------+
+
+Note: The table shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. "Hierarchical Name" reflects the Block RAM name as it appears in the hierarchical module and only part of it is displayed.
+Distributed RAM: 
++-------------------+--------------------------+-----------+----------------------+---------------------+---------------------------+
+|Module Name        | RTL Object               | Inference | Size (Depth x Width) | Primitives          | Hierarchical Name         | 
++-------------------+--------------------------+-----------+----------------------+---------------------+---------------------------+
+|mmu__GC0           | physical_page_memory_reg | Implied   | 32 x 12              | RAM32M x 2          | Translation_Buffer/ram__1 | 
+|AXI_Slave_RAM__GB0 | mem_reg                  | Implied   | 1024 K x 8           | RAM256X1S x 32768   | RAM/ram__2                | 
+|AXI_Slave_RAM__GB0 | mem_reg                  | Implied   | 1024 K x 8           | RAM256X1S x 32768   | RAM/ram__3                | 
+|AXI_Slave_RAM__GB0 | mem_reg                  | Implied   | 1024 K x 8           | RAM256X1S x 32768   | RAM/ram__4                | 
+|AXI_Slave_RAM__GB0 | mem_reg                  | Implied   | 1024 K x 8           | RAM256X1S x 32768   | RAM/ram__5                | 
++-------------------+--------------------------+-----------+----------------------+---------------------+---------------------------+
+
+Note: The table shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the Distributed RAM name as it appears in the hierarchical module and only part of it is displayed.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[31][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[30][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[29][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[28][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[27][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[26][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[25][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[24][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[23][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[22][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[21][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[20][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[19][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[18][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[17][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][2] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][1] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[16][0] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[15][5] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[15][4] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[15][3] ) is unused and will be removed from module Translation_Buffer.
+WARNING: [Synth 8-3332] Sequential element (\properties_memory_reg[15][2] ) is unused and will be removed from module Translation_Buffer.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\TLB_properties_input_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\araddr_reg[31]_P )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\araddr_reg[31]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\arid_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\arid_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\arid_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\arid_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\awaddr_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\awid_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\awid_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\awid_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\awid_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_status_register_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_status_register_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_status_register_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_status_register_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\fault_address_register_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[17][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[16][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[19][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[18][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[23][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[22][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[21][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[20][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[29][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[28][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[31][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[30][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[25][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[24][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[27][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[26][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[1][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[3][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[2][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[7][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[6][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[5][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[4][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[13][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[12][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[15][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[14][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[9][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[8][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[11][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/translationbuffer/\properties_memory_reg[10][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DRAM_Slave/i_0/\read_len_queue_reg[1][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DRAM_Slave/i_0/\read_len_queue_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DRAM_Slave/i_0/\write_size_queue_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (DRAM_Slave/i_0/\write_size_queue_reg[0][0] )
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:28:53 ; elapsed = 00:49:01 . Memory (MB): peak = 3833.625 ; gain = 3657.598
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:28:53 ; elapsed = 00:49:01 . Memory (MB): peak = 3833.625 ; gain = 3657.598
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |AXI_Slave_RAM__GB0 |           1|   1309442|
+|2     |AXI_Slave_RAM__GB1 |           1|       227|
+|3     |mmu__GC0           |           1|      5796|
++------+-------------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:28:53 ; elapsed = 00:49:03 . Memory (MB): peak = 3833.625 ; gain = 3657.598
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:29:36 ; elapsed = 00:51:50 . Memory (MB): peak = 3833.625 ; gain = 3657.598
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:29:36 ; elapsed = 00:51:52 . Memory (MB): peak = 3833.625 ; gain = 3657.598
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |AXI_Slave_RAM__GB0 |           1|   1309442|
+|2     |AXI_Slave_RAM__GB1 |           1|       227|
+|3     |mmu__GC0           |           1|      5796|
++------+-------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------

@@ -34,7 +34,7 @@ module mmu_TB(
     reg supervisor;
     wire[31:0] fault_address_register;
     wire[3:0] fault_status_register;
-    wire[23:0] physical_address;
+    wire[21:0] physical_address;
     reg[31:0] data_in;
     wire[31:0] data_out;
     
@@ -116,7 +116,7 @@ module mmu_TB(
             
             #40 enable_RW=0;
             
-            
+            //this is where the section is checked
             #240 mmu_enable=1;
        
             #40 virtual_address=28'hFFFFABC;
@@ -127,7 +127,7 @@ module mmu_TB(
                 read=0;
                 
                 
-           //test for a condition where the data exists in tlb
+/*           //test for a condition where the data exists in tlb for the first access
            #240
            #40 virtual_address=28'hFFFFAAA;
                read=1;
@@ -143,7 +143,7 @@ module mmu_TB(
                enable_RW=1;
                
            #40 enable_RW=0;
-               read=0;     
+               read=0;     */
                                
                 
         end    

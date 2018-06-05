@@ -155,7 +155,7 @@ module AXI_Slave_RAM(
     //RAM Control signals
     reg[3:0] read;
     reg[3:0] enable_RW;
-    reg[23:0] address[3:0];
+    reg[21:0] address[3:0];
     reg[7:0] data_in[3:0];
     wire[7:0] data_out[3:0];
     
@@ -168,7 +168,7 @@ module AXI_Slave_RAM(
     parameter WAIT_FOR_RREADY=4'b0011;
     parameter WAIT_FOR_WVALID=4'b0100;
     parameter WAIT_FOR_BREADY=4'b0101;
-    reg[2:0] no_of_transfers;
+    reg[3:0] no_of_transfers;
     reg[3:0] ram_controller_state;
     reg[1:0] read_size;
     reg[31:0] read_address;

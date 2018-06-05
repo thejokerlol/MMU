@@ -24,7 +24,7 @@ module RAM(clk,read,enable_RW,address,data_in,data_out);
 
 
     parameter DATA_WIDTH=8;//length of each word
-    parameter ADDRESS_WIDTH=24;
+    parameter ADDRESS_WIDTH=22;
     parameter RAM_DEPTH=(2**(ADDRESS_WIDTH-2));//no_of locations
     
     //parameter MEM_INIT_FILE = "C:\Users\vamsi\Desktop\Main_Project_Code\Mem_block_init_file";//Memry initialization file parameter
@@ -57,11 +57,11 @@ module RAM(clk,read,enable_RW,address,data_in,data_out);
        begin
             if(read)
             begin
-                data_out<=mem[address[23:2]];
+                data_out<=mem[address[21:2]];
             end
             else
             begin
-                mem[address[23:2]]<=data_in;
+                mem[address[21:2]]<=data_in;
             end
        end
     end
