@@ -12,7 +12,7 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/MMU/Memory_M
 INFO: [VRFC 10-311] analyzing module cache
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sources_1/new/mmu.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module mmu
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sim_1/new/mmu_TB.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module mmu_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.srcs/sim_1/new/MMU_TB_new.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmu_TB_new
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

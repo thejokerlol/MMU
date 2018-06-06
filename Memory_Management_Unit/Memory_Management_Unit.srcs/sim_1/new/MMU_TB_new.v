@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 03.06.2018 13:22:55
+// Create Date: 06.06.2018 11:59:44
 // Design Name: 
-// Module Name: mmu_TB
+// Module Name: MMU_TB_new
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mmu_TB(
+module mmu_TB_new(
 
     );
     reg clk;
@@ -34,7 +34,7 @@ module mmu_TB(
     reg supervisor;
     wire[31:0] fault_address_register;
     wire[3:0] fault_status_register;
-    wire[21:0] physical_address;
+    wire[17:0] physical_address;
     reg[31:0] data_in;
     wire[31:0] data_out;
     reg[3:0] transfer_length;
@@ -76,7 +76,7 @@ module mmu_TB(
         end
         initial
         begin
-            #4800 $finish;
+            #9000 $finish;
         end
         
         always
@@ -90,8 +90,8 @@ module mmu_TB(
             
             #40 enable_RW=1;
                 read=0;
-                virtual_address=28'd65532;
-                data_in=32'h57e00002;// section descriptor
+                virtual_address=28'h0002FF8;
+                data_in=32'h20000C06;// section descriptor
                 transfer_length=1;
                 burst_type=1;
             
@@ -101,8 +101,8 @@ module mmu_TB(
             
             #40 enable_RW=1;
                 read=0;
-                virtual_address=28'h0000ffc;
-                data_in=32'h00bf001;// page descriptor
+                virtual_address=28'h00002AFC;
+                data_in=32'h0C000001;// page descriptor
             
             #40 enable_RW=0;
             
@@ -119,8 +119,8 @@ module mmu_TB(
                         
             #40 enable_RW=1;
                 read=0;
-                virtual_address=28'h0000bf3c;
-                data_in=32'h0007f002;//  second page descriptor
+                virtual_address=28'h00003038;
+                data_in=32'h20000C05;//  second page descriptor
             
             #40 enable_RW=0;
             
@@ -129,7 +129,7 @@ module mmu_TB(
             #240 
             #40 enable_RW=1;
                 read=0;
-                virtual_address=28'h02ffabc;
+                virtual_address=28'h000AABC;
                 data_in=32'h32333435;
                 transfer_length=8;
                 burst_type=2'b10;
@@ -137,13 +137,21 @@ module mmu_TB(
             
             
             #600
+            //cache address writing
+            #240 
+            #40 enable_RW=1;
+                read=0;
+                virtual_address=28'h0008ABC;
+                data_in=32'h22232425;
+                transfer_length=8;
+                burst_type=2'b10;
+            #40 enable_RW=0;
             
-            
-            
+            #600
             //this is where the section is checked
             #240 mmu_enable=1;
        
-            #40 virtual_address=28'hFFFFABC;
+            #40 virtual_address=28'h2FFAABC;
                 read=1;
                 enable_RW=1;
                 
@@ -153,21 +161,21 @@ module mmu_TB(
                 
            //test for a condition where the data exists in tlb for the first access
            #2000
-           #40 virtual_address=28'hFFFFAAA;
+           #40 virtual_address=28'h2FFAABC;
                read=1;
                enable_RW=1;
                
            #40 enable_RW=0;
                read=0;
-/*               
-           #320
-           //for a small page
-           #40 virtual_address=28'h0FFFFA8;
+
+           #1000
+           //for a large page
+           #40 virtual_address=28'h2AFFABC;
                read=1;
                enable_RW=1;
                
            #40 enable_RW=0;
-               read=0;     */
+               read=0;     
                                
                 
         end    

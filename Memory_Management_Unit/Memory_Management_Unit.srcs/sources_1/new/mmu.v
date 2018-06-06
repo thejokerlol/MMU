@@ -53,7 +53,7 @@ module mmu(
     input supervisor;
     output reg[31:0] fault_address_register;
     output reg[3:0] fault_status_register;
-    output reg[21:0] physical_address;
+    output reg[17:0] physical_address;
     input[31:0] data_in;
     output reg[31:0] data_out;
     
@@ -111,11 +111,11 @@ module mmu(
     //translation buffer inputs
     
     reg[27:0] TLB_virtual_address;
-    reg[21:0] TLB_physical_address_input;
+    reg[17:0] TLB_physical_address_input;
     reg[7:0] TLB_properties_input;
     reg TLB_read;
     reg TLB_enable_RW;
-    wire[21:0] TLB_physical_address;
+    wire[17:0] TLB_physical_address;
     wire[7:0] TLB_properties;
     wire TLB_hit;
     
@@ -340,7 +340,7 @@ module mmu(
                     end
                     else
                     begin
-                        araddr<={TTBR[27:16],virtual_address[27:14],2'b00};//descriptor of first address
+                        araddr<={TTBR[31:30],virtual_address[27:14],2'b00};//descriptor of first address
                         arsize<=2'b10;//32 bits
                         arlen<=1;
                         arburst<=1;
@@ -368,9 +368,9 @@ module mmu(
                         first_descriptor<=rdata;
                         if(rdata[1:0]==2'b10)//a section
                         begin
-                            physical_address<={rdata[28:27],rdata[26:23],rdata[22:21],virtual_address[13:0]};
+                            physical_address<={rdata[31:28],virtual_address[13:0]};
                             TLB_virtual_address=virtual_address;
-                            TLB_physical_address_input={rdata[28:27],rdata[26:23],rdata[22:21],virtual_address[13:0]};
+                            TLB_physical_address_input={rdata[31:28],virtual_address[13:0]};
                             TLB_properties_input={2'b00,rdata[11:10],4'b0000};//rdata[11:10] are access permissions
                             TLB_enable_RW=1;
                             TLB_read=0;
@@ -379,7 +379,7 @@ module mmu(
                         end
                         else if(rdata[1:0]==2'b01)//a page
                         begin
-                            araddr={rdata[27:10],virtual_address[13:10],2'b00};//address of a second level descriptor
+                            araddr={rdata[31:20],virtual_address[13:10],2'b00};//address of a second level descriptor
                             arsize=2'b10;
                             arlen=1;
                             arburst=2'b01;
@@ -418,9 +418,9 @@ module mmu(
                         rready=0;
                         if(rdata[1:0]==2'b10)//a small page
                         begin
-                            physical_address<={rdata[23:12],virtual_address[9:0]};
+                            physical_address<={rdata[31:24],virtual_address[9:0]};
                             TLB_virtual_address=virtual_address;
-                            TLB_physical_address_input={rdata[23:12],virtual_address[9:0]};
+                            TLB_physical_address_input={rdata[31:24],virtual_address[9:0]};
                             TLB_properties_input={2'b01,rdata[11:10],4'b0000};//rdata[11:10] are access permissions
                             TLB_enable_RW=1;
                             TLB_read=0;
@@ -429,8 +429,13 @@ module mmu(
                         end
                         else if(rdata[1:0]==2'b01)//a large  page
                         begin
-                            physical_address<={rdata[23:16],virtual_address[13:0]};
-                            mmu_state<=MMU_IDLE_STATE;
+                            physical_address<={rdata[31:26],virtual_address[11:0]};
+                            TLB_virtual_address=virtual_address;
+                            TLB_physical_address_input={rdata[31:26],virtual_address[11:0]};
+                            TLB_properties_input={2'b10,rdata[11:10],4'b0000};//rdata[11:10] are access permissions
+                            TLB_enable_RW=1;
+                            TLB_read=0;
+                            mmu_state<=WRITE_BACK_IN_TLB;
                         end
                         else//a fault
                         begin

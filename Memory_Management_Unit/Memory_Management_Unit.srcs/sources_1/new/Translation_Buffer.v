@@ -39,15 +39,15 @@ module Translation_Buffer(
     input[27:0] virtual_address;
     input read;
     input enable_RW;
-    input[21:0] physical_address_input;
+    input[17:0] physical_address_input;
     input[7:0] properties_input;
-    output reg[21:0] physical_address;
+    output reg[17:0] physical_address;
     output reg[7:0] properties;
     output reg hit;
     
     reg[31:0] valid;
     reg[27:10] virtual_page_memory[0:31];
-    reg[21:10] physical_page_memory[0:31];
+    reg[17:10] physical_page_memory[0:31];
     reg[7:0] properties_memory[0:31];
     
     reg[7:0] time_stamp;
@@ -189,16 +189,16 @@ module Translation_Buffer(
             case(properties_memory[decoder_output][7:6])
                 2'b00://a section
                 begin
-                    physical_address={physical_page_memory[decoder_output][21:14],virtual_address[13:0]};
+                    physical_address={physical_page_memory[decoder_output][17:14],virtual_address[13:0]};
                     
                 end
                 2'b01://a small page
                 begin
-                    physical_address={physical_page_memory[decoder_output][21:10],virtual_address[9:0]};
+                    physical_address={physical_page_memory[decoder_output][17:10],virtual_address[9:0]};
                 end
                 2'b10://a large page
                 begin
-                    physical_address={physical_page_memory[decoder_output][21:12],virtual_address[11:0]};
+                    physical_address={physical_page_memory[decoder_output][17:12],virtual_address[11:0]};
                 end
                 2'b11://not used
                 begin
@@ -242,7 +242,7 @@ module Translation_Buffer(
         begin
            virtual_page_memory[LRU_location]<=virtual_address[27:10];
            properties_memory[LRU_location]<=properties_input;
-           physical_page_memory[LRU_location]<=physical_address_input[21:10];
+           physical_page_memory[LRU_location]<=physical_address_input[17:10];
         end
     end
     
@@ -252,46 +252,38 @@ module Translation_Buffer(
         //LRU LOGIC
  reg[4:0] LRU_no[0:30];
  reg[7:0] LRU_value[0:30];
- 
- genvar m;
- generate
-  for(m=0;m<31;m=m+1)
-  begin
-      if(m==0)
-      begin
-          always@(*)
-          begin
-            if(LRU_count_register[0]<LRU_count_register[1])
-            begin
-                LRU_no[0]=0;
-                LRU_value[0]=LRU_count_register[0];
-            end
-            else
-            begin
-                LRU_no[0]=1;
-                LRU_value[0]=LRU_count_register[1];
-            end
-          end
-      end
-      else
-      begin
-          always@(*)
-          begin
-            if(LRU_value[m-1]<LRU_count_register[m+1])
-            begin
-                LRU_value[m]=LRU_value[m-1];
-                LRU_no[m]=LRU_no[m-1];
-            end
-            else
-            begin
-                LRU_value[m]=LRU_count_register[m+1];
-                LRU_no[m]=m+1;
-            end
-          end  
-      end
-  end
- endgenerate
-    
+ reg[4:0] count_1;
+      always@(*)
+       begin
+         if(LRU_count_register[0]<LRU_count_register[1])
+         begin
+             LRU_no[0]=0;
+             LRU_value[0]=LRU_count_register[0];
+         end
+         else
+         begin
+             LRU_no[0]=1;
+             LRU_value[0]=LRU_count_register[1];
+         end
+       end
+     always@(*)
+     begin
+         for(count_1=0;count_1<31;count_1=count_1+1)
+         begin
+           if(LRU_value[count_1-1]<LRU_count_register[count_1+1])
+           begin
+               LRU_value[count_1]=LRU_value[count_1-1];
+               LRU_no[count_1]=LRU_no[count_1-1];
+           end
+           else
+           begin
+               LRU_value[count_1]=LRU_count_register[count_1+1];
+               LRU_no[count_1]=count_1+1;
+           end
+         end
+     end
+   
+     
 always@(*)
 begin
     LRU_location=LRU_no[30];
