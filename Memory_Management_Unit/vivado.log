@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Fri Jun 08 19:54:08 2018
+# Process ID: 6292
+# Log file: C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/vivado.log
+# Journal file: C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/vamsi/Desktop/MMU/Memory_Management_Unit/Memory_Management_Unit.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 728.266 ; gain = 105.043
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 08 20:01:38 2018...
